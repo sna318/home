@@ -1,0 +1,222 @@
+body {
+  margin: 0px;
+  cursor: url("star_cursor.png"), auto;
+  overflow-x: hidden; /*gets rid of weird horizontal overflow*/
+}
+
+.container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px 10px;
+  grid-template-areas:
+    "header header header"
+    "music central readings"
+    "about central readings"
+    "about central thought"
+    "projects central thought"
+    "projects central thought"
+    "footer footer footer";
+  background-image: url("personal-bg.jpg");
+  background-size: cover;
+}
+
+.header {
+  grid-area: header;
+  margin: 0px;
+  background-image: linear-gradient(to right, #4b5267, #2e294e);
+  text-align: center;
+}
+
+.music {
+  grid-area: music;
+  margin: 8%;
+}
+
+.about {
+  grid-area: about;
+  background-color: rgba(18, 16, 31, 0.6);
+  margin: 8%;
+  padding: 8%;
+}
+
+.projects {
+  grid-area: projects;
+  background-color: rgba(18, 16, 31, 0.6);
+  margin: 8%;
+  padding: 8%;
+}
+
+.central {
+  grid-area: central;
+}
+
+.readings {
+  grid-area: readings;
+  background-color: rgba(18, 16, 31, 0.6);
+  margin: 8%;
+  padding: 8%;
+}
+
+.thought {
+  grid-area: thought;
+  background-color: rgba(18, 16, 31, 0.6);
+  margin: 8%;
+  padding: 8%;
+}
+
+.footer {
+  grid-area: footer;
+  background-image: linear-gradient(to right, #4b5267, #2e294e);
+  margin: 0px;
+  text-align: center;
+  font-family: "Paytone One", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  padding: 1%;
+}
+
+h2 {
+  font-family: "Paytone One", sans-serif;
+  font-size: 32px;
+  color: #ffffff;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.about:hover,
+.projects:hover,
+.footer:hover,
+.readings:hover,
+.thought:hover {
+  background-color: rgba(18, 16, 31, 0.9);
+}
+
+h2:hover,
+p:hover {
+  background-color: #be97c6;
+}
+
+.header h3 {
+  font-family: "Paytone One", sans-serif;
+  animation: translateText 3s linear infinite;
+  color: #ffffff;
+  text-align: center;
+}
+
+@keyframes translateText {
+  0% {
+    transform: translateX(100%);
+  }
+  /* 20% {
+    transform: translateX(0%);
+  } */
+  25% {
+    transform: translateX(10%);
+  }
+  80% {
+    transform: translateX(10%);
+  }
+  /* 85% {
+    transform: translateX(20%);
+  } */
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+button {
+  background-color: #efbcd5;
+  color: #2e294e;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border: none;
+  border-radius: 8px;
+  margin: 2%;
+  font-family: "Paytone One", sans-serif;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #8661c1;
+  color: #efbcd5;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+img {
+  width: 700px;
+  animation: rotateMe 30s linear infinite;
+}
+
+@keyframes rotateMe {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  25% {
+    transform: rotate(-90deg);
+    transform: translateY(15%);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(-270deg);
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 0px 0px;
+    grid-template-areas:
+      "header"
+      "music"
+      "about"
+      "projects"
+      "central"
+      "readings"
+      "thought"
+      "footer";
+  }
+
+  .central {
+    display: none;
+  }
+
+  .img {
+    display: none;
+  }
+
+  .music,
+  .about,
+  .projects,
+  .central,
+  .readings,
+  .thought {
+    margin: 10px;
+    padding: 4%;
+  }
+
+  .header,
+  .footer {
+    margin: 0px;
+  }
+}
